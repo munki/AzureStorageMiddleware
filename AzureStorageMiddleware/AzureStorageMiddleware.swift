@@ -32,14 +32,14 @@ class AzureStorageMiddleware: MunkiMiddleware {
 
 // MARK: dylib "interface"
 
-/// Function with C calling style for our dylib. We use it to instantiate the Repo object and return an instance
-@_cdecl("createPlugin")
-public func createPlugin() -> UnsafeMutableRawPointer {
-    return Unmanaged.passRetained(AzureStorageMiddlewareBuilder()).toOpaque()
-}
-
 final class AzureStorageMiddlewareBuilder: MiddlewarePluginBuilder {
     override func create() -> MunkiMiddleware {
         return AzureStorageMiddleware()
     }
+}
+
+/// Function with C calling style for our dylib. We use it to instantiate the Repo object and return an instance
+@_cdecl("createPlugin")
+public func createPlugin() -> UnsafeMutableRawPointer {
+    return Unmanaged.passRetained(AzureStorageMiddlewareBuilder()).toOpaque()
 }
