@@ -3,7 +3,7 @@ This is a proof-of-concept project that builds an Azure Storage middleware plugi
 It is a port of Oliver Kieselbach's Azure Storage middleware:
 https://github.com/okieselbach/Munki-Middleware-Azure-Storage
 
-This has not actually been tested against a repo hosted on Azure.
+As of May 15, 2025, this has not actually been tested against a repo hosted on Azure. If you test it and it works, please let me know!
 
 The middleware plugin must be installed in /usr/local/munki/middleware/, and you need Munki 7.0.0.5139 or later to test.
 
