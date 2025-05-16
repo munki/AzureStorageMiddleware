@@ -38,7 +38,8 @@ final class AzureStorageMiddlewareBuilder: MiddlewarePluginBuilder {
     }
 }
 
-/// Function with C calling style for our dylib. We use it to instantiate the Repo object and return an instance
+/// Function with C calling style for our dylib.
+/// We use it to instantiate the MunkiMiddleware object and return an instance
 @_cdecl("createPlugin")
 public func createPlugin() -> UnsafeMutableRawPointer {
     return Unmanaged.passRetained(AzureStorageMiddlewareBuilder()).toOpaque()
