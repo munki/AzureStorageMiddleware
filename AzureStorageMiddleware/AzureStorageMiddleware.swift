@@ -24,7 +24,7 @@ class AzureStorageMiddleware: MunkiMiddleware {
 
         var modifiedRequest = request
         if modifiedRequest.url.contains(azureEndpoint) {
-            modifiedRequest.url = modifiedRequest.url + sharedAccessSignature
+            modifiedRequest.url = modifiedRequest.url + "?" + sharedAccessSignature
         }
         return modifiedRequest
     }
