@@ -6,19 +6,61 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C05767B22DE11A9100FEF66A /* AzureStorageMiddleware.plugin in Frameworks */ = {isa = PBXBuildFile; fileRef = C058EF892DCFA10A002775E0 /* AzureStorageMiddleware.plugin */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C05767B32DE11A9100FEF66A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C058EF812DCFA10A002775E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C058EF882DCFA10A002775E0;
+			remoteInfo = AzureStorageMiddleware;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		C05767AE2DE11A9100FEF66A /* AzureStorageMiddlewareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AzureStorageMiddlewareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C058EF892DCFA10A002775E0 /* AzureStorageMiddleware.plugin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = AzureStorageMiddleware.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		C05767B92DE11B1700FEF66A /* Exceptions for "AzureStorageMiddleware" folder in "AzureStorageMiddlewareTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AzureStorageMiddleware.swift,
+				MiddlewareProtocol.swift,
+			);
+			target = C05767AD2DE11A9100FEF66A /* AzureStorageMiddlewareTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		C05767AF2DE11A9100FEF66A /* AzureStorageMiddlewareTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AzureStorageMiddlewareTests;
+			sourceTree = "<group>";
+		};
 		C058EF8B2DCFA10A002775E0 /* AzureStorageMiddleware */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				C05767B92DE11B1700FEF66A /* Exceptions for "AzureStorageMiddleware" folder in "AzureStorageMiddlewareTests" target */,
+			);
 			path = AzureStorageMiddleware;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C05767AB2DE11A9100FEF66A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C05767B22DE11A9100FEF66A /* AzureStorageMiddleware.plugin in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C058EF872DCFA10A002775E0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -33,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				C058EF8B2DCFA10A002775E0 /* AzureStorageMiddleware */,
+				C05767AF2DE11A9100FEF66A /* AzureStorageMiddlewareTests */,
 				C058EF8A2DCFA10A002775E0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				C058EF892DCFA10A002775E0 /* AzureStorageMiddleware.plugin */,
+				C05767AE2DE11A9100FEF66A /* AzureStorageMiddlewareTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,6 +102,29 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		C05767AD2DE11A9100FEF66A /* AzureStorageMiddlewareTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C05767B72DE11A9100FEF66A /* Build configuration list for PBXNativeTarget "AzureStorageMiddlewareTests" */;
+			buildPhases = (
+				C05767AA2DE11A9100FEF66A /* Sources */,
+				C05767AB2DE11A9100FEF66A /* Frameworks */,
+				C05767AC2DE11A9100FEF66A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C05767B42DE11A9100FEF66A /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C05767AF2DE11A9100FEF66A /* AzureStorageMiddlewareTests */,
+			);
+			name = AzureStorageMiddlewareTests;
+			packageProductDependencies = (
+			);
+			productName = AzureStorageMiddlewareTests;
+			productReference = C05767AE2DE11A9100FEF66A /* AzureStorageMiddlewareTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		C058EF882DCFA10A002775E0 /* AzureStorageMiddleware */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C058EF922DCFA10A002775E0 /* Build configuration list for PBXNativeTarget "AzureStorageMiddleware" */;
@@ -87,8 +154,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
+					C05767AD2DE11A9100FEF66A = {
+						CreatedOnToolsVersion = 16.3;
+					};
 					C058EF882DCFA10A002775E0 = {
 						CreatedOnToolsVersion = 16.3;
 						LastSwiftMigration = 1630;
@@ -110,11 +181,29 @@
 			projectRoot = "";
 			targets = (
 				C058EF882DCFA10A002775E0 /* AzureStorageMiddleware */,
+				C05767AD2DE11A9100FEF66A /* AzureStorageMiddlewareTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		C05767AC2DE11A9100FEF66A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		C05767AA2DE11A9100FEF66A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C058EF862DCFA10A002775E0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +213,46 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C05767B42DE11A9100FEF66A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C058EF882DCFA10A002775E0 /* AzureStorageMiddleware */;
+			targetProxy = C05767B32DE11A9100FEF66A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		C05767B52DE11A9100FEF66A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.googlecode.munki.AzureStorageMiddlewareTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C05767B62DE11A9100FEF66A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.googlecode.munki.AzureStorageMiddlewareTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		C058EF902DCFA10A002775E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -276,6 +404,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C05767B72DE11A9100FEF66A /* Build configuration list for PBXNativeTarget "AzureStorageMiddlewareTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C05767B52DE11A9100FEF66A /* Debug */,
+				C05767B62DE11A9100FEF66A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C058EF842DCFA10A002775E0 /* Build configuration list for PBXProject "AzureStorageMiddleware" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

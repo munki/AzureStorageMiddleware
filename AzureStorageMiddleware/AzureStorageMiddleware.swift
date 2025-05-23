@@ -16,6 +16,15 @@ func pref(_ prefName: String) -> Any? {
     return CFPreferencesCopyAppValue(prefName as CFString, BUNDLE_ID)
 }
 
+func buildAzureStorageURL(_ originalURL: String, sas: String) -> String {
+    if sas.hasPrefix("?") {
+        // assume sas has aready been encoded as a URL query
+        // (as was the case for the original Python version)
+        return originalURL + sas
+    }
+    return originalURL + "?" + sas
+}
+
 /// Adds a shared access signature to the request URL
 class AzureStorageMiddleware: MunkiMiddleware {
     func processRequest(_ request: MunkiMiddlewareRequest) -> MunkiMiddlewareRequest {
@@ -24,7 +33,7 @@ class AzureStorageMiddleware: MunkiMiddleware {
 
         var modifiedRequest = request
         if modifiedRequest.url.contains(azureEndpoint) {
-            modifiedRequest.url = modifiedRequest.url + sharedAccessSignature
+            modifiedRequest.url = buildAzureStorageURL(modifiedRequest.url, sas: sharedAccessSignature)
         }
         return modifiedRequest
     }
