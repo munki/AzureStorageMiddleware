@@ -28,13 +28,17 @@ func buildAzureStorageURL(_ originalURL: String, sas: String) -> String {
 /// Adds a shared access signature to the request URL
 class AzureStorageMiddleware: MunkiMiddleware {
     func processRequest(_ request: MunkiMiddlewareRequest) -> MunkiMiddlewareRequest {
-        let sharedAccessSignature = pref("SharedAccessSignature") as? String ?? ""
         let azureEndpoint = pref("AzureEndpoint") as? String ?? "blob.core.windows.net"
-
-        var modifiedRequest = request
-        if modifiedRequest.url.contains(azureEndpoint) {
-            modifiedRequest.url = buildAzureStorageURL(modifiedRequest.url, sas: sharedAccessSignature)
+        if !request.url.contains(azureEndpoint) {
+            // return unmodified request
+            return request
         }
+        var modifiedRequest = request
+        guard let sharedAccessSignature = pref("SharedAccessSignature") as? String else {
+            print("ERROR: could not get SharedAccessSignature from preferences")
+            return modifiedRequest
+        }
+        modifiedRequest.url = buildAzureStorageURL(modifiedRequest.url, sas: sharedAccessSignature)
         return modifiedRequest
     }
 }
