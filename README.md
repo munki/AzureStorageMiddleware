@@ -1,10 +1,14 @@
-This is a proof-of-concept project that builds an Azure Storage middleware plugin for Munki 7.
+This is a project that builds an Azure Storage middleware plugin for Munki 7.
 
 It is a port of Oliver Kieselbach's Azure Storage middleware:
 https://github.com/okieselbach/Munki-Middleware-Azure-Storage
 
 A basic test against a repo hosted on Azure storage was successful (thanks @natewalck).
 
-The middleware plugin must be installed in `/usr/local/munki/middleware/`, and you need Munki 7.0.0.5152 or later to test.
+This plugin requires Munki 7.0.0.5152 or later.
 
-To build the middleware plugin and an Installer pkg that installs it, cd into this directory and run `./build_pkg.sh`. You will need a recent version of Xcode.
+Configuration is the same as the Python version of this plugin, detailed [here](https://github.com/okieselbach/Munki-Middleware-Azure-Storage#configuration).
+
+You may download an Installer package for the current release of the middleware plugin from the [Releases](https://github.com/munki/AzureStorageMiddleware/releases) section.
+
+To build the middleware plugin and an Installer pkg that installs it, `git clone` this project, `cd` into the project directory, and run `./build_pkg.sh`. You will need a recent version of Xcode.
